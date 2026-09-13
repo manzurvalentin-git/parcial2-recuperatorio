@@ -1,0 +1,393 @@
+
+/* RESET Y MODELO DE CAJA */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* TIPOGRAFÍA, COLORES BASE Y FONDO DE LA PÁGINA */
+
+body {
+    /* Tipografía y colores base */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    color: #23303b;
+    background-color: #d9e2ea;
+
+    /* Imagen de fondo entregada, en las tres páginas. */
+    background-image: URL("../img/fondo.png");
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-position: center center;
+
+    /* El body centra horizontalmente el bloque contenedor usando flexbox.
+       El padding deja ver la imagen de fondo alrededor del contenido. */
+    display: flex;
+    justify-content: center;
+    padding: 2.5rem 1.5rem;
+}
+
+/* Títulos y elementos destacados: usan la tipografía de Google Fonts. */
+h1, h2, h3, h4,
+.destacado,
+.cita {
+    font-family: 'Abel', Arial, sans-serif;
+    color: #14385e;
+}
+
+
+/* CONTENEDOR CON ANCHO MÁXIMO */
+
+.contenedor {
+    width: 100%;
+    max-width: 64rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 1.5rem;
+}
+
+
+/* ENCABEZADO (igual en las tres páginas) */
+
+.encabezado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    background-color: #14385e;
+    color: #ffffff;
+    text-align: center;
+}
+
+.encabezado h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+}
+
+.encabezado .bajada {
+    font-size: 1rem;
+    font-style: italic;
+    margin-top: 0.5rem;
+    color: #cfe3f5;
+}
+
+
+/* MENÚ DE NAVEGACIÓN (horizontal, igual en las tres páginas) */
+
+.menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #0d2440;
+    list-style-type: none;
+}
+
+.menu li {
+    display: inline-block;
+}
+
+.menu a {
+    display: block;
+    padding: 0.85rem 1.75rem;
+    font-size: 1rem;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* Estado: enlace todavía no visitado */
+.menu a:link {
+    color: #ffffff;
+    background-color: #0d2440;
+}
+
+/* Estado: enlace ya visitado */
+.menu a:visited {
+    color: #c7d9e8;
+    background-color: #0d2440;
+}
+
+/* Estado: mouse sobre el enlace */
+.menu a:hover {
+    color: #0d2440;
+    background-color: #a8cbe8;
+}
+
+/* Estado: click sobre el enlace */
+.menu a:active {
+    color: #ffffff;
+    background-color: #2f6fa8;
+}
+
+
+/* CONTENIDO GENERAL */
+
+.contenido {
+    padding: 2rem 0;
+}
+
+.contenido h2 {
+    font-size: 1.9rem;
+    margin-bottom: 1rem;
+}
+
+.contenido h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+}
+
+.contenido p {
+    margin-bottom: 1rem;
+}
+
+.contenido ul,
+.contenido ol {
+    margin: 0 0 1rem 1.5rem;
+}
+
+.contenido li {
+    margin-bottom: 0.35rem;
+}
+
+.seccion {
+    margin-bottom: 2.5rem;
+}
+
+.articulo {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    background-color: #f2f6fa;
+}
+
+/* Elemento destacado: usa la tipografía de Google Fonts */
+.destacado {
+    font-size: 1.1rem;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    background-color: #d6e6f2;
+    color: #0d2440;
+}
+
+/* Cita textual de la artista */
+.cita {
+    font-size: 1.5rem;
+    font-style: italic;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    background-color: #d6e6f2;
+    color: #0d2440;
+    text-align: center;
+}
+
+/* Imágenes de contenido */
+.imagen {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+
+/* LAYOUT DE 3 COLUMNAS DEL MISMO ANCHO (página de inicio) */
+
+.columnas-tres {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.columnas-tres .columna {
+    width: 33.33%;
+    padding: 0 0.75rem;
+}
+
+
+/* LAYOUT DE 2 COLUMNAS DE ANCHO DIFERENTE (página de obras) */
+
+.columnas-dos {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.columnas-dos .columna-angosta {
+    width: 33%;
+    padding: 0 0.75rem;
+}
+
+.columnas-dos .columna-ancha {
+    width: 67%;
+    padding: 0 0.75rem;
+}
+
+
+/* GALERÍA CON JAVASCRIPT (página de obras) */
+
+.controles {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.obra {
+    width: 47%;
+    margin: 1.5%;
+    padding: 0.75rem;
+    background-color: #f2f6fa;
+    text-align: center;
+}
+
+.obra img {
+    width: 100%;
+    height: auto;
+}
+
+.obra .titulo-obra {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0.5rem 0 0 0;
+}
+
+.obra .año-obra {
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-bottom: 0;
+}
+
+
+/* BOTONES */
+
+.boton {
+    padding: 0.75rem 1.5rem;
+    margin: 0 0.5rem 0.5rem 0.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    border: 0.15rem solid #14385e;
+    background-color: #a8cbe8;
+    color: #0d2440;
+}
+
+.boton:hover {
+    background-color: #14385e;
+    color: #ffffff;
+}
+
+
+/* DATO CURIOSO AL AZAR (página de inicio) */
+
+.dato-curioso {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    background-color: #d6e6f2;
+    border: 0.15rem solid #14385e;
+    text-align: center;
+}
+
+.dato-curioso h3 {
+    margin-bottom: 1rem;
+}
+
+#texto-dato {
+    font-size: 1.05rem;
+    min-height: 3rem;
+    margin-bottom: 1rem;
+}
+
+
+/* FORMULARIOS Y RESULTADOS (página del ejercicio) */
+
+.formulario {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    background-color: #f2f6fa;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    padding: 0 0.5rem 0.75rem 0.5rem;
+}
+
+.campo label {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 0.35rem;
+}
+
+.campo input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 0.1rem solid #14385e;
+}
+
+.acciones {
+    width: 100%;
+    padding: 0 0.5rem;
+}
+
+.mensaje {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    background-color: #d6e6f2;
+    font-size: 0.95rem;
+}
+
+.listado {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    background-color: #f2f6fa;
+}
+
+.listado ol {
+    margin-left: 1.5rem;
+}
+
+.resultados {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    background-color: #d6e6f2;
+    border: 0.15rem solid #14385e;
+}
+
+.resultados h4 {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+}
+
+
+/* PIE DE PÁGINA (igual en las tres páginas) */
+
+.pie {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.25rem;
+    background-color: #0d2440;
+    color: #ffffff;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.pie address {
+    font-style: normal;
+    margin-top: 0.5rem;
+}
+
+.pie a {
+    color: #a8cbe8;
+    text-decoration: none;
+}
+
+.pie a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}

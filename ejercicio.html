@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Laurie Anderson | Ejercicio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+    <link href="css/estilos.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <!-- ENCABEZADO: igual en las tres páginas -->
+        <header class="encabezado">
+            <h1>Laurie Anderson</h1>
+            <p class="bajada">Performance, tecnología y narración en el arte contemporáneo</p>
+        </header>
+
+        <!-- MENÚ DE NAVEGACIÓN: igual en las tres páginas -->
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="obras.html">Obras</a></li>
+                <li><a href="ejercicio.html">Ejercicio</a></li>
+            </ul>
+        </nav>
+
+        <!-- CONTENIDO PRINCIPAL: distinto en cada página -->
+        <main class="contenido">
+
+            <h2>Repositorio de grabaciones digitales</h2>
+
+            <p class="destacado">Sistema para gestionar el repositorio de grabaciones digitales
+                de obras musicales de Laurie Anderson.</p>
+
+            <!-- Indicaciones para el usuario -->
+            <section class="seccion">
+                <article class="articulo">
+                    <h3>Cómo interactuar</h3>
+                    <ol>
+                        <li>Completar la <strong>configuración general</strong>: cantidad de obras
+                            del repositorio, tiempo de transferencia en milisegundos por MB y costo
+                            mensual de almacenamiento por MB. Luego presionar <em>Iniciar carga</em>.</li>
+                        <li>Cargar las obras <strong>una por una</strong> indicando nombre, duración
+                            en minutos y peso del archivo en MB. Cuando se completa la cantidad
+                            indicada, el formulario se deshabilita solo.</li>
+                        <li>Presionar <em>Calcular resultados</em> para conocer la duración total y
+                            promedio, la obra de mayor duración con su tiempo de descarga y el
+                            presupuesto anual del repositorio.</li>
+                        <li>Presionar <em>Reiniciar</em> para volver al estado inicial y cargar
+                            nuevos datos.</li>
+                    </ol>
+                    <p>Todos los datos son validados: sólo se aceptan números mayores que cero y el
+                        nombre de la obra no puede quedar vacío.</p>
+                </article>
+            </section>
+
+            <!-- Paso 1: configuración general -->
+            <section class="seccion">
+                <h3>Paso 1: Configuración general</h3>
+
+                <form class="formulario" id="form-configuracion">
+
+                    <div class="campo">
+                        <label for="cantidad-obras">Cantidad de obras</label>
+                        <input type="number" id="cantidad-obras" name="cantidad-obras">
+                    </div>
+
+                    <div class="campo">
+                        <label for="tiempo-transferencia">Transferencia (ms por MB)</label>
+                        <input type="number" id="tiempo-transferencia" name="tiempo-transferencia">
+                    </div>
+
+                    <div class="campo">
+                        <label for="costo-mensual">Costo mensual por MB</label>
+                        <input type="number" id="costo-mensual" name="costo-mensual">
+                    </div>
+
+                    <div class="acciones">
+                        <button class="boton" type="submit">Iniciar carga</button>
+                    </div>
+
+                </form>
+            </section>
+
+            <!-- Paso 2: carga de obras -->
+            <section class="seccion">
+                <h3>Paso 2: Carga de obras</h3>
+
+                <p class="mensaje" id="mensaje-carga">Empezá por completar la configuración general.</p>
+
+                <form class="formulario" id="form-obra">
+
+                    <div class="campo">
+                        <label for="nombre-obra">Nombre de la obra</label>
+                        <input type="text" id="nombre-obra" name="nombre-obra">
+                    </div>
+
+                    <div class="campo">
+                        <label for="duracion-obra">Duración (minutos)</label>
+                        <input type="number" id="duracion-obra" name="duracion-obra">
+                    </div>
+
+                    <div class="campo">
+                        <label for="peso-obra">Peso del archivo (MB)</label>
+                        <input type="number" id="peso-obra" name="peso-obra">
+                    </div>
+
+                    <div class="acciones">
+                        <button class="boton" type="submit">Agregar obra</button>
+                    </div>
+
+                </form>
+
+                <div class="listado" id="listado-obras"></div>
+            </section>
+
+            <!-- Paso 3: resultados -->
+            <section class="seccion">
+                <h3>Paso 3: Resultados</h3>
+
+                <div class="controles">
+                    <button class="boton" id="boton-calcular" type="button">Calcular resultados</button>
+                    <button class="boton" id="boton-reiniciar" type="button">Reiniciar</button>
+                </div>
+
+                <div class="resultados" id="resultados"></div>
+            </section>
+
+        </main>
+
+        <!-- PIE DE PÁGINA: igual en las tres páginas -->
+        <footer class="pie">
+            <p>IG2026 — Informática General | Trabajo Práctico final</p>
+            <address>
+                Para contactarse escribir a
+                <a href="mailto:laurie@artedigital.com">laurie@artedigital.com</a>
+            </address>
+        </footer>
+
+    </div>
+
+    <script src="js/ejercicio.js"></script>
+
+</body>
+
+</html>
