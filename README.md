@@ -1,2 +1,4 @@
 # parcial2-recuperatiorio
-Recuperatorio del segundo parcial
+Nicanor Valentin Manzur
+Segundo Parcial - Informatica General 
+Artes Multimediales - UNA
